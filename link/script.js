@@ -69,7 +69,6 @@ updateTimer();
 
 
 // form
-// Yangilangan JavaScript
 const showButtons = document.querySelectorAll(".show_button");
 const registerFormModal = document.querySelector(".registration-modal");
 const closeBtn = document.querySelector(".close-btn");
