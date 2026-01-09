@@ -182,7 +182,7 @@ form.addEventListener("submit", async function (e) {
         // 0.5 soniya kutib, keyin yo‘naltiramiz (foydalanuvchi loadingni ko‘rib ulgurishi uchun)
         setTimeout(() => {
             window.location.href = telegramLink;
-        }, 100);
+        }, 0);
 
     } catch (error) {
         console.error("Xatolik:", error);
