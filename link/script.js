@@ -92,7 +92,6 @@ showButtons.forEach(button => {
 closeBtn.addEventListener("click", () => {
     document.body.style.overflow = "";
     registerFormModal.style.display = "none";
-    clearErrors();
 });
 
 // Telefon raqamini formatlash (+998 XX XXX XX XX)
