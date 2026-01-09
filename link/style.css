@@ -687,4 +687,10 @@ body {
     .main-title {
         font-size: clamp(0px, 9.5vw, 40px);
     }
+
+    .close-btn {
+        position: absolute;
+        top: 0px;
+        right: -13px;
+    }
 }
