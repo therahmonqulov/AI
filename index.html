@@ -129,14 +129,25 @@
     <section class="registration-modal">
         <div class="blur-bg"></div>
         <div class="registration-form">
-                <button class="close-btn">X</button>
+            <button class="close-btn">X</button>
             <div class="form-container">
                 <h2>Ro'yxatdan o'tish</h2>
                 <p>Praktikumda qatnashish 199,000 so'm. Pastda Ismingiz va telefon raqamingizni qoldiring, menejerimiz
                     siz bilan bog'lanadi.</p>
-                <form>
-                    <input type="text" placeholder="Ismingiz" class="form-input" required>
-                    <input type="text" placeholder="+998" class="form-input" required>
+
+                <form id="registrationForm">
+                    <div class="input-wrapper">
+                        <input type="text" id="fullName" placeholder="Ismingiz" class="form-input"
+                            minlength="2">
+                        <span class="error-message" id="nameError"></span>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <input type="tel" id="phone" class="form-input phone-input" placeholder="+998" value="+998"
+                            maxlength="17"  >
+                        <span class="error-message" id="phoneError"></span>
+                    </div>
+
                     <button type="submit" class="submit-btn">Yuborish</button>
                 </form>
             </div>

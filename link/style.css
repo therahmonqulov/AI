@@ -608,6 +608,19 @@ body {
     }
 }
 
+/* Qo'shimcha stillar (kerak bo'lsa) */
+.input-wrapper {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+.error-message {
+    color: #ff4d4d;
+    font-size: 0.85rem;
+    position: absolute;
+    bottom: -0.4rem;
+    left: 0;
+}
+
 @media (max-width: 900px) {
     .registration-form {
         width: 85vw;
