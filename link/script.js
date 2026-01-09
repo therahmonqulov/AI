@@ -44,8 +44,8 @@ function startTimer() {
     if (!timerRunning) {
         timerRunning = true;
         countdownInterval = setInterval(() => {
-          timeLeft--;
-          updateTimer();
+            timeLeft--;
+            updateTimer();
         }, 1000);
     }
 }
@@ -98,20 +98,20 @@ closeBtn.addEventListener("click", () => {
 // Telefon raqamini formatlash (+998 XX XXX XX XX)
 phoneInput.addEventListener("input", (e) => {
     let value = e.target.value.replace(/\D/g, ''); // faqat raqamlar
-    
+
     if (value.startsWith('998')) {
         value = value.substring(3);
     }
-    
+
     // +998 dan keyin maksimum 9 ta raqam
     value = value.substring(0, 9);
-    
+
     let formatted = "+998";
     if (value.length > 0) formatted += " " + value.substring(0, 2);
     if (value.length > 2) formatted += " " + value.substring(2, 5);
     if (value.length > 5) formatted += " " + value.substring(5, 7);
     if (value.length > 7) formatted += " " + value.substring(7, 9);
-    
+
     e.target.value = formatted;
 });
 
@@ -124,9 +124,9 @@ function clearErrors() {
 }
 
 // Formani tekshirish va yuborish
-form.addEventListener("submit", async function(e) {
+form.addEventListener("submit", async function (e) {
     e.preventDefault();
-    
+
     clearErrors();
     let isValid = true;
 
@@ -151,7 +151,7 @@ form.addEventListener("submit", async function(e) {
     // Ma'lumotlarni tayyorlash
     const formData = {
         name: name,
-        phone: phoneInput.value,
+        phone: "'" + phoneInput.value,   // ← mana bu yerda "'" + qo'shildi
         timestamp: new Date().toLocaleString("uz-UZ", { timeZone: "Asia/Tashkent" })
     };
 
@@ -171,7 +171,7 @@ form.addEventListener("submit", async function(e) {
 
         // muvaffaqiyatli yuborilganini bildirish
         alert("Muvaffaqiyatli yuborildi! Tez orada menejerimiz siz bilan bog'lanadi.");
-        
+
         registerFormModal.style.display = "none";
         form.reset();
         phoneInput.value = "+998";
