@@ -10,6 +10,11 @@ body {
     background-image: url(../media/background.webp);
 }
 
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
+
 /* frist */
 .frist {
     display: flex;
@@ -18,6 +23,7 @@ body {
 }
 
 .main_hero {
+    margin-top: 40px;
     text-align: center;
     position: relative;
 }
@@ -36,7 +42,7 @@ body {
 
 .main_hero_p1 {
     letter-spacing: 1px;
-    font-size: 17px;
+    font-size: clamp(10px, 5vw, 17px);
     font-weight: 700;
     -webkit-text-fill-color: transparent;
     text-shadow: rgba(115, 249, 231, 0.3) 0px 0px 20px;
@@ -44,6 +50,8 @@ body {
 }
 
 .main_hero img {
+     width: clamp(0px, 80vw, 480px);
+     height: 100%;
     background-color: #001729bc;
     border-radius: 50%;
     box-shadow: rgba(0, 121, 220, 0.275) 0px 0px 40px, rgba(0, 100, 200, 0.308) 0px 0px 80px;
@@ -55,8 +63,7 @@ body {
 
 .main_text p {
     text-align: center;
-    width: 700px;
-    font-size: 1.5rem;
+    font-size: clamp(10px, 4vw, 2rem);
     font-weight: 700;
     -webkit-text-fill-color: transparent;
     text-shadow: rgba(115, 249, 231, 0.3) 0px 0px 20px;
@@ -97,7 +104,7 @@ body {
 }
 
 .text {
-    font-size: 1.3rem;
+    font-size: clamp(0px, 4vw, 24px);
     font-weight: 500;
     letter-spacing: 0.2px;
 }
@@ -213,14 +220,6 @@ body {
     z-index: 1;
 }
 
-.container {
-    position: relative;
-    z-index: 2;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-}
-
 .main-title {
     font-size: clamp(2.1rem, 5vw, 3.8rem);
     font-weight: 800;
@@ -241,9 +240,8 @@ body {
 
 .cards-wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 28px;
-    max-width: 1100px;
     margin: 0 auto;
 }
 
@@ -464,9 +462,8 @@ body {
 /* Responsive */
 @media (max-width: 600px) {
     .bottom-bar {
-        gap: 0.9rem;
         font-size: 1rem;
-        padding: 0 2%;
+        padding: 0 16px;
     }
 
     .timer-box {
@@ -477,11 +474,14 @@ body {
     }
 
     .btn-register-sec {
+        margin-left: 20px;
+        display: flex;
         font-size: 1rem;
         padding: 7px 18px 8px 18px;
     }
 
     .bottom-timer-label {
+        display: none;
         font-size: 0.9rem;
     }
 }
