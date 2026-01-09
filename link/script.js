@@ -182,7 +182,7 @@ form.addEventListener("submit", async function (e) {
         // 0.5 soniya kutib, keyin yo‘naltiramiz (foydalanuvchi loadingni ko‘rib ulgurishi uchun)
         setTimeout(() => {
             window.location.href = telegramLink;
-        }, 500);
+        }, 100);
 
     } catch (error) {
         console.error("Xatolik:", error);
@@ -194,5 +194,4 @@ form.addEventListener("submit", async function (e) {
         btnLoading.style.display = "none";
     }
 
-    // Eslatma: muvaffaqiyatli holatda loading o'chmaydi, chunki sahifa o'zgaradi
 });
