@@ -82,14 +82,15 @@ const phoneError = document.getElementById("phoneError");
 // Modalni ochish/yopish
 showButtons.forEach(button => {
     button.addEventListener("click", () => {
+        document.body.style.overflow = "hidden";
         registerFormModal.style.display = "block";
         form.reset();
         phoneInput.value = "+998";
         clearErrors();
     });
 });
-
 closeBtn.addEventListener("click", () => {
+    document.body.style.overflow = "";
     registerFormModal.style.display = "none";
     clearErrors();
 });
