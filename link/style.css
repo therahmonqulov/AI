@@ -495,8 +495,8 @@ body {
 
 .close-btn {
     position: absolute;
-    top: 14px;
-    right: 20px;
+    top: -20px;
+    right: -20px;
     background: rgba(60, 60, 90, 0.2);
     color: #fff;
     border: none;
@@ -505,7 +505,6 @@ body {
     height: 32px;
     font-size: 20px;
     cursor: pointer;
-    transition: background 0.2s;
 }
 
 .close-btn:hover {
@@ -638,7 +637,6 @@ body {
     }
 
     .registration-form {
-        width: 95vw;
         padding: 18px 25px 24px 25px;
         border-radius: 18px;
     }
@@ -658,12 +656,6 @@ body {
         padding: 13px 14px;
         border-radius: 10px;
         margin-bottom: 1px;
-    }
-
-    .close-btn {
-        width: 33px;
-        height: 33px;
-        font-size: 1rem;
     }
 }
 
