@@ -485,3 +485,10 @@ body {
         font-size: 0.9rem;
     }
 }
+
+
+@media (max-width: 925px) {
+    .main_text br{
+        display: none   ;
+    }
+}
