@@ -567,8 +567,43 @@ body {
     font-size: 0.85rem;
 }
 
+@media (max-width: 900px) {
+    .main_text br {
+        display: none;
+    }
+
+    .registration-form {
+        width: 85vw;
+        padding: 15px 30px 30px 30px;
+    }
+}
+
 /* MEDIA QUERIES */
 @media (max-width: 600px) {
+    .bottom-bar {
+        font-size: 1rem;
+        padding: 0 16px;
+    }
+
+    .timer-box {
+        min-width: 34px;
+        min-height: 34px;
+        font-size: 1.25rem;
+        line-height: 34px;
+    }
+
+    .btn-register-sec {
+        margin-left: 20px;
+        display: flex;
+        font-size: 1rem;
+        padding: 7px 18px 8px 18px;
+    }
+
+    .bottom-timer-label {
+        display: none;
+        font-size: 0.9rem;
+    }
+
     .registration-form {
         width: 95vw;
         padding: 18px 8px 24px 8px;
@@ -597,47 +632,6 @@ body {
         height: 33px;
         font-size: 1rem;
         background: none;
-    }
-}
-
-@media (max-width: 900px) {
-    .registration-form {
-        width: 85vw;
-        padding: 15px 30px 30px 30px;
-    }
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-    .bottom-bar {
-        font-size: 1rem;
-        padding: 0 16px;
-    }
-
-    .timer-box {
-        min-width: 34px;
-        min-height: 34px;
-        font-size: 1.25rem;
-        line-height: 34px;
-    }
-
-    .btn-register-sec {
-        margin-left: 20px;
-        display: flex;
-        font-size: 1rem;
-        padding: 7px 18px 8px 18px;
-    }
-
-    .bottom-timer-label {
-        display: none;
-        font-size: 0.9rem;
-    }
-}
-
-
-@media (max-width: 925px) {
-    .main_text br {
-        display: none;
     }
 }
 
