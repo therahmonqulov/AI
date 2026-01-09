@@ -58,7 +58,7 @@ window.addEventListener('scroll', () => {
     const percent = ((scrollTop + windowH) / docH) * 100;
 
     // taxminan 45–70% oralig'ida chiqadi
-    if (percent > 45) {
+    if (percent > 50    ) {
         bar.classList.add('visible');
 
         // birinchi marta ko'ringanda timer ishga tushadi

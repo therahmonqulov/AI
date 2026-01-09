@@ -355,13 +355,7 @@ body {
     }
 }
 
-.dummy-content {
-    height: 100vh;
-    display: grid;
-    place-items: center;
-    font-size: 4rem;
-    color: #444;
-}
+
 /* Pastdagi fixed bar */
 .bottom-bar {
     background-color: #0000009a;
@@ -387,16 +381,6 @@ body {
 .bottom-bar.visible {
     transform: translateY(0);
     /* ko‘rinadigan holat */
-}
-.time-part {
-    font-size: 2.1rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-}
-.text-part {
-    font-size: 1.6rem;
-    font-weight: 500;
 }
 .arrow {
     font-size: 1.8rem;
