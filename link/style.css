@@ -382,16 +382,19 @@ body {
     transform: translateY(0);
     /* ko‘rinadigan holat */
 }
+
 .arrow {
     font-size: 1.8rem;
     animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
+
     0%,
     100% {
         opacity: 0.7;
     }
+
     50% {
         opacity: 1;
     }
@@ -408,12 +411,12 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    padding: 10px 26px 15px 26px;
+    padding: 3px 30px 5px 30px;
     border-radius: 10px;
-    background: linear-gradient(90deg, #2563eb, #3b82f6);
-    color: #ffffff;
+    background: linear-gradient(90deg, rgb(115, 249, 231), rgb(110, 139, 255), rgb(179, 136, 255)) 0% 0% / 200% 100%;
+    color: #000;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 500;
     box-shadow:
         0 8px 24px rgba(37, 90, 235, 0.656),
