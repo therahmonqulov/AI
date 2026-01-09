@@ -1,3 +1,17 @@
+const showButton = document.querySelectorAll(".show_button");
+const resgisterForm = document.querySelector(".registration-modal")
+const closeButt = document.querySelector(".close-btn")
+
+showButton.forEach(button => {
+    button.addEventListener("click", () => {
+        resgisterForm.style.display = "block"
+    });
+});
+closeButt.addEventListener("click", () => {
+    resgisterForm.style.display = "none"
+})
+
+
 // oxirgi versiya (eng silliq)
 const track = document.getElementById("carouselTrack");
 const originalWidth = track.scrollWidth / 2;
