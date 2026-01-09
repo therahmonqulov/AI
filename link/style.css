@@ -202,16 +202,8 @@ body {
     display: block;
 }
 
-/* responsive */
-@media (max-width: 768px) {
-    .carousel-item {
-        flex: 0 0 280px;
-        height: 200px;
-    }
-}
-
 .why-join-section {
-    padding: 100px 20px 140px;
+    padding: 80px 20px 140px;
     position: relative;
 }
 
@@ -334,25 +326,6 @@ body {
 .copyright {
     margin-top: 20px;
     opacity: 0.7;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .why-join-section {
-        padding: 70px 16px 100px;
-    }
-
-    .main-title {
-        font-size: 2.6rem;
-    }
-
-    .cards-wrapper {
-        grid-template-columns: 1fr;
-    }
-
-    .benefit-card {
-        padding: 36px 24px;
-    }
 }
 
 /* bottom-bar */
@@ -582,6 +555,18 @@ body {
     background: linear-gradient(90deg, #0598f7, #06dfff);
 }
 
+/* Qo'shimcha stillar (kerak bo'lsa) */
+.input-wrapper {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.error-message {
+    display: flex;
+    color: #ff4d4d;
+    font-size: 0.85rem;
+}
+
 /* MEDIA QUERIES */
 @media (max-width: 600px) {
     .registration-form {
@@ -613,18 +598,6 @@ body {
         font-size: 1rem;
         background: none;
     }
-}
-
-/* Qo'shimcha stillar (kerak bo'lsa) */
-.input-wrapper {
-    position: relative;
-    margin-bottom: 1.5rem;
-}
-
-.error-message {
-    display: flex;
-    color: #ff4d4d;
-    font-size: 0.85rem;
 }
 
 @media (max-width: 900px) {
@@ -665,5 +638,29 @@ body {
 @media (max-width: 925px) {
     .main_text br {
         display: none;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .why-join-section {
+        padding: 70px 16px 100px;
+    }
+
+    .main-title {
+        font-size: 2.6rem;
+    }
+
+    .cards-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .benefit-card {
+        padding: 36px 24px;
+    }
+
+    .carousel-item {
+        flex: 0 0 280px;
+        height: 200px;
     }
 }
