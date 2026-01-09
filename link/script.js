@@ -123,60 +123,76 @@ function clearErrors() {
 }
 
 // Formani tekshirish va yuborish
+const submitBtn = document.getElementById("submitBtn");
+const btnText = submitBtn.querySelector(".btn-text");
+const btnLoading = submitBtn.querySelector(".btn-loading");
+
+// Form submit
 form.addEventListener("submit", async function (e) {
     e.preventDefault();
 
     clearErrors();
     let isValid = true;
 
-    // Ism tekshiruvi (kamida 2 ta harf)
+    // Ism tekshiruvi
     const name = nameInput.value.trim();
     if (name.length < 2) {
-        nameError.textContent = "Ism olishda xatolik";
+        nameError.textContent = "Ism kamida 2 ta belgidan iborat bo'lishi kerak";
         nameInput.classList.add("error");
         isValid = false;
     }
 
-    // Telefon raqami tekshiruvi
+    // Telefon tekshiruvi
     const phoneValue = phoneInput.value.replace(/\D/g, '');
     if (phoneValue.length !== 12 || !phoneValue.startsWith("998")) {
-        phoneError.textContent = "Telefon raqamda xatolik";
+        phoneError.textContent = "Raqam +998 XX XXX XX XX formatida bo'lishi kerak";
         phoneInput.classList.add("error");
         isValid = false;
     }
 
     if (!isValid) return;
 
+    // Loading holatini yoqamiz
+    submitBtn.disabled = true;
+    btnText.style.display = "none";
+    btnLoading.style.display = "flex";
+
     // Ma'lumotlarni tayyorlash
     const formData = {
         name: name,
-        phone: "'" + phoneInput.value,   // ← mana bu yerda "'" + qo'shildi
+        phone: "'" + phoneInput.value,  // oldingi muammoni hal qilish uchun
         timestamp: new Date().toLocaleString("uz-UZ", { timeZone: "Asia/Tashkent" })
     };
 
     try {
-        // Google Apps Script Web App URL manzili kerak!
-        // Avval Google Sheet → Extensions → Apps Script da skript yoziladi
         const scriptURL = "https://script.google.com/macros/s/AKfycbwYeiF44X4Y6k4cpA377kyURyxNmpP91HCR-kx_T7bX1DaZ4HL-fMlsLIm1-E4QmIHliA/exec";
 
-        const response = await fetch(scriptURL, {
+        await fetch(scriptURL, {
             method: "POST",
-            mode: "no-cors", // muhim!
+            mode: "no-cors",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(formData)
         });
 
-        // muvaffaqiyatli yuborilganini bildirish
-        alert("Muvaffaqiyatli yuborildi! Tez orada menejerimiz siz bilan bog'lanadi.");
+        // Muvaffaqiyat → Telegramga yo'naltirish
+        const telegramLink = "https://t.me/+R-JAz1cgd_RlNjVk"; // ← BU YERNI O‘Z TELEGRAM KANAL/GURUH HAVOLANGIZGA ALMASHTIRING!
 
-        registerFormModal.style.display = "none";
-        form.reset();
-        phoneInput.value = "+998";
+        // 0.5 soniya kutib, keyin yo‘naltiramiz (foydalanuvchi loadingni ko‘rib ulgurishi uchun)
+        setTimeout(() => {
+            window.location.href = telegramLink;
+        }, 500);
 
     } catch (error) {
         console.error("Xatolik:", error);
         alert("Yuborishda xatolik yuz berdi. Iltimos qayta urinib ko'ring.");
+
+        // Xatolik bo'lsa loadingni o'chiramiz
+        submitBtn.disabled = false;
+        btnText.style.display = "block";
+        btnLoading.style.display = "none";
     }
+
+    // Eslatma: muvaffaqiyatli holatda loading o'chmaydi, chunki sahifa o'zgaradi
 });
