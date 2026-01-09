@@ -132,7 +132,7 @@ form.addEventListener("submit", async function (e) {
     // Ism tekshiruvi (kamida 2 ta harf)
     const name = nameInput.value.trim();
     if (name.length < 2) {
-        nameError.textContent = "Ism kamida 2 ta belgidan iborat bo'lishi kerak";
+        nameError.textContent = "Ism olishda xatolik";
         nameInput.classList.add("error");
         isValid = false;
     }
@@ -140,7 +140,7 @@ form.addEventListener("submit", async function (e) {
     // Telefon raqami tekshiruvi
     const phoneValue = phoneInput.value.replace(/\D/g, '');
     if (phoneValue.length !== 12 || !phoneValue.startsWith("998")) {
-        phoneError.textContent = "Telefon raqami +998 XX XXX XX XX formatida bo'lishi kerak";
+        phoneError.textContent = "Telefon raqamda xatolik";
         phoneInput.classList.add("error");
         isValid = false;
     }

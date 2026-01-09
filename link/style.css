@@ -476,7 +476,7 @@ body {
     z-index: 110;
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
-    background: rgba(15,20,35, 0.57);
+    background: rgba(15, 20, 35, 0.57);
 }
 
 /* Registration form styles */
@@ -486,7 +486,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 120;
-    background: rgba(20,30,60,0.94);
+    background: rgba(20, 30, 60, 0.94);
     width: 480px;
     box-shadow: 0 0 60px 10px #02ddf4aa, 0 0 20px 0 #000a;
     border-radius: 28px;
@@ -523,7 +523,7 @@ body {
     position: absolute;
     top: 14px;
     right: 20px;
-    background: rgba(60,60,90,0.2);
+    background: rgba(60, 60, 90, 0.2);
     color: #fff;
     border: none;
     border-radius: 9px;
@@ -535,17 +535,17 @@ body {
 }
 
 .close-btn:hover {
-    background: rgba(255,255,255,0.13);
+    background: rgba(255, 255, 255, 0.13);
 }
 
 .form-input {
     width: 100%;
     padding: 16px 22px;
-    margin-bottom: 19px;
+    margin-bottom: 5px;
     border: 1px solid transparent;
     border-radius: 14px;
     font-size: 1.15rem;
-    background: rgba(46,60,75,0.6);
+    background: rgba(46, 60, 75, 0.6);
     color: #fff;
     box-shadow: 0 2px 14px 0 #1117b433 inset;
     outline: none;
@@ -566,7 +566,7 @@ body {
 .submit-btn {
     width: 100%;
     padding: 17px 0;
-    background: linear-gradient(90deg,#07f,#14e4ff);
+    background: linear-gradient(90deg, #07f, #14e4ff);
     color: #fff;
     border: none;
     border-radius: 14px;
@@ -579,7 +579,7 @@ body {
 }
 
 .submit-btn:hover {
-    background: linear-gradient(90deg,#0598f7,#06dfff);
+    background: linear-gradient(90deg, #0598f7, #06dfff);
 }
 
 /* MEDIA QUERIES */
@@ -589,22 +589,29 @@ body {
         padding: 18px 8px 24px 8px;
         border-radius: 18px;
     }
+
     .form-container h2 {
         font-size: 1.36rem;
     }
+
     .form-container p {
         font-size: .97rem;
         margin-bottom: 17px;
     }
-    .form-input, .submit-btn {
+
+    .form-input,
+    .submit-btn {
         font-size: 1rem;
         padding: 13px 14px;
         border-radius: 10px;
+        margin-bottom: 1px;
     }
+
     .close-btn {
         width: 33px;
         height: 33px;
-        font-size: 1.4rem;
+        font-size: 1rem;
+        background: none;
     }
 }
 
@@ -613,18 +620,17 @@ body {
     position: relative;
     margin-bottom: 1.5rem;
 }
+
 .error-message {
+    display: flex;
     color: #ff4d4d;
     font-size: 0.85rem;
-    position: absolute;
-    bottom: -0.4rem;
-    left: 0;
 }
 
 @media (max-width: 900px) {
     .registration-form {
         width: 85vw;
-        padding: 28px 12px 30px 12px;
+        padding: 15px 30px 30px 30px;
     }
 }
 
