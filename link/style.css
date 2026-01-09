@@ -355,87 +355,133 @@ body {
     }
 }
 
-
-/* Pastdagi fixed bar */
+/* bottom-bar */
 .bottom-bar {
-    background-color: #0000009a;
-    border-top: 1px solid rgba(255, 255, 255, 0.301);
+    background: rgba(9, 12, 20, 0.92);
+    border-top: 1px solid #282f41;
     position: fixed;
-    bottom: 0;
     left: 0;
     right: 0;
-    height: 90px;
-    color: white;
+    bottom: 0;
+    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2.5rem;
-    transform: translateY(100%);
-    /* boshida pastda yashirin */
-    transition: transform 0.7s ease-out;
-    box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.45);
+    height: 85px;
     z-index: 1000;
-    padding: 0 5%;
+    padding: 0 7%;
+    font-family: 'Inter', Arial, sans-serif;
+    box-shadow: 0 -8px 24px #10101c88;
+    backdrop-filter: blur(2px);
+    transform: translateY(100%);
+    transition: transform 0.7s cubic-bezier(.22, .61, .36, 1);
 }
 
 .bottom-bar.visible {
     transform: translateY(0);
-    /* ko‘rinadigan holat */
 }
 
-.arrow {
-    font-size: 1.8rem;
-    animation: pulse 2s infinite;
+.bottom-timer-label {
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    color: #a0a8bd;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    margin-right: 1.4rem;
+    margin-top: 6px;
 }
 
-@keyframes pulse {
-
-    0%,
-    100% {
-        opacity: 0.7;
-    }
-
-    50% {
-        opacity: 1;
-    }
+.timer {
+    display: flex;
+    align-items: center;
 }
 
-/* faqat test uchun uzun kontent */
-.extra-space {
-    height: 120vh;
-    background: #111;
+.timer-colon {
+    font-size: 2.1rem;
+    font-weight: 500;
+    color: #2691e4;
+    padding: 0 0.5rem;
+    margin-bottom: 2px;
+    filter: drop-shadow(0 0 3px #2db5fa88);
+}
+
+.timer-box {
+    display: inline-block;
+    min-width: 44px;
+    min-height: 44px;
+    background: rgba(12, 18, 36, 0.95);
+    border-radius: 10px;
+    border: 2px solid #249afc99;
+    box-shadow: 0 0 14px 0 #268fff4a;
+    color: #e7f6fd;
+    text-align: center;
+    font-size: 1.1rem;
+    font-family: inherit;
+    font-weight: 600;
+    line-height: 44px;
+    letter-spacing: 0.04em;
+    margin: 0 0.1rem;
+    text-shadow: 0 0 3px #2368f9a8;
+    position: relative;
 }
 
 .btn-register-sec {
+    margin-left: 45px;
     outline: none;
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 3px 30px 5px 30px;
-    border-radius: 10px;
-    background: linear-gradient(90deg, rgb(115, 249, 231), rgb(110, 139, 255), rgb(179, 136, 255)) 0% 0% / 200% 100%;
-    color: #000;
+    gap: 8px;
+    padding: 6px 20px 6px 20px;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(88deg, #65f6e7, #7f94fc 55%, #b586ff 100%);
+    color: #141414;
     text-decoration: none;
-    font-size: 18px;
-    font-weight: 500;
-    box-shadow:
-        0 8px 24px rgba(37, 90, 235, 0.656),
-        inset 0 1px 0 rgba(255, 255, 255, 0.15);
-
-    transition: all 0.25s ease;
-}
-
-.btn-register-sec .arrow {
-    font-size: 25px;
-    transition: transform 0.25s ease;
+    font-size: 1em;
+    font-weight: 600;
+    box-shadow: 0 8px 32px 0 #396dfa42, 0px 2px 0px #fff2 inset;
+    transition: box-shadow 0.2s, transform 0.2s, background 0.6s;
+    cursor: pointer;
+    letter-spacing: 0.04em;
 }
 
 .btn-register-sec:hover {
-    transform: translateY(-1px);
-    box-shadow:
-        0 12px 32px rgba(37, 99, 235, 0.6);
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 14px 38px 0 #2748d877;
+    background: linear-gradient(92deg, #65f6e7, #7f94fc 66%, #b586ff 100%);
 }
 
-.btn-register:hover .arrow {
-    transform: translateX(4px);
+.arrow {
+    font-size: 1.45rem;
+    font-weight: 500;
+    transition: transform 0.18s;
+}
+
+.btn-register-sec:hover .arrow {
+    transform: translateX(6px) scale(1.08);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .bottom-bar {
+        gap: 0.9rem;
+        font-size: 1rem;
+        padding: 0 2%;
+    }
+
+    .timer-box {
+        min-width: 34px;
+        min-height: 34px;
+        font-size: 1.25rem;
+        line-height: 34px;
+    }
+
+    .btn-register-sec {
+        font-size: 1rem;
+        padding: 7px 18px 8px 18px;
+    }
+
+    .bottom-timer-label {
+        font-size: 0.9rem;
+    }
 }

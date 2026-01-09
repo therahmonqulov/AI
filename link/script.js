@@ -24,18 +24,19 @@ let timerRunning = false;
 let countdownInterval = null;
 
 const bar = document.getElementById('bottomBar');
-const timerDisplay = document.getElementById('countdown');
+const tMin = document.getElementById('tm-min');
+const tSec = document.getElementById('tm-sec');
 
 function updateTimer() {
     const minutes = Math.floor(timeLeft / 60);
     const seconds = timeLeft % 60;
-    timerDisplay.textContent =
-        `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-
+    tMin.textContent = minutes.toString().padStart(2, '0');
+    tSec.textContent = seconds.toString().padStart(2, '0');
     if (timeLeft <= 0) {
-        timerDisplay.textContent = "00:00";
+        tMin.textContent = "00";
+        tSec.textContent = "00";
         clearInterval(countdownInterval);
-        // xohlasangiz shu yerda boshqa harakat qo'shishingiz mumkin (masalan rang o'zgartirish)
+        // option: bar.style.background = "linear-gradient(88deg,#401c2f,#1b2340)"
     }
 }
 
@@ -43,8 +44,8 @@ function startTimer() {
     if (!timerRunning) {
         timerRunning = true;
         countdownInterval = setInterval(() => {
-            timeLeft--;
-            updateTimer();
+          timeLeft--;
+          updateTimer();
         }, 1000);
     }
 }
@@ -54,17 +55,10 @@ window.addEventListener('scroll', () => {
     const scrollTop = window.scrollY;
     const windowH = window.innerHeight;
     const docH = document.documentElement.scrollHeight;
-
     const percent = ((scrollTop + windowH) / docH) * 100;
-
-    // taxminan 45–70% oralig'ida chiqadi
-    if (percent > 50    ) {
+    if (percent > 50) {
         bar.classList.add('visible');
-
-        // birinchi marta ko'ringanda timer ishga tushadi
-        if (!timerRunning) {
-            startTimer();
-        }
+        if (!timerRunning) { startTimer(); }
     } else {
         bar.classList.remove('visible');
     }
